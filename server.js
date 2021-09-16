@@ -12,3 +12,4 @@ const movieController = require('./controllers/Movie.controller');
 app.get('/weather', weatherController);
 app.get('/movies', movieController);
 app.listen(PORT, () => {});
+
