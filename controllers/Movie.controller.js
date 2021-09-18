@@ -10,7 +10,7 @@ let handleMovies = async (req, res) => {
   let dateConvert=(date)=> Math.floor(date/1000/60/60/23.993/7); // to convert ms to weeks
 
   if (cache.data.length > 0 && cache.place === place && cache.date === dateConvert(Date.now())) {
-    res.status(200).json(cache);
+    res.status(200).json(cache.data);
   } else {
     let url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIE_API_KEY}&query='${place}'`;
     let themoviedbResponse = await axios.get(url);
